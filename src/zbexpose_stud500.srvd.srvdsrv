@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Student'
+define service ZBEXPOSE_STUD500 {
+  expose ZBC_STUDENT_5000;
+}

@@ -1,0 +1,31 @@
+managed implementation in class zbp_bi_student_5000 unique;
+//strict ;
+
+define behavior for ZBI_STUDENT_5000 alias Student
+persistent table zba_rap_5000
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field (numbering : managed, readonly ) Id;
+  action (features : instance) setAdmitted result [1] $self;
+
+  mapping for zba_rap_5000
+  {
+      Id             = Id;
+      Firstname      = firstname;
+      Lastname       = lastname;
+      Age            = age;
+      Course         = course;
+      Courseduration = courseduration;
+      Status         = status;
+      Gender         = gender;
+      Dob            = dob;
+      Lastchangedat  = lastchangedat;
+      Locallastchangedat = locallastchangedat;
+  }
+}
